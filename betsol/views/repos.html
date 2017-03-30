@@ -1,0 +1,24 @@
+<!-- <div class="container">
+	<div class="row" > 
+		COMMIT
+      <div class="col-md-6" >
+		{{commitData.length}}     
+      </div>
+    </div>
+</div>  -->
+<div class="jumbotron text-center">
+  <h1>Welcome to GITHUB App</h1>  
+</div>
+<div class="container">
+	<div class="col-lg-12 repos">
+		<div class="col-lg-12 col-xs-12"><h3>Number of Commit: {{commitData.length}}</h3></div>
+		<div class="col-lg-6 visible-lg-block"><h4>Commit Number</h4></div>
+		<div class="col-lg-6 visible-lg-block"><h4>Commit Message</h4></div>
+		<li ng-repeat="c in commitData" style="padding:20px 0px">
+			<div class="col-xs-12 visible-sm-block visible-xs-block"><h4>Commit Number: </h4></div>
+			<div class="col-lg-6 col-xs-12" title="{{c.sha}}" style="max-width: 100%;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">{{c.sha}}</div>
+			<div class="col-xs-12 visible-sm-block visible-xs-block"><h4>Commit Message: </h4></div>
+			<div class="col-lg-6 col-xs-12">{{c.commit.message}}</div> 
+		</li>
+	</div>
+</div>

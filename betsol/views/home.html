@@ -1,0 +1,21 @@
+
+<div class="jumbotron text-center">
+  <h1>Welcome to GITHUB App</h1>  
+  <form class="form-inline">
+    <div class="input-group">
+      <input type="text" class="form-control" size="50" ng-model="username" placeholder="Enter username" required>
+      <div class="input-group-btn">
+        <button type="button" class="btn btn-danger" ng-click="getrepos(username)">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="container">
+	<div class="col-lg-12 repos"  ng-repeat="repo in repoData" ng-if="repoData">
+		<li><img class="img-circle img-responsive" src='{{repo.owner.avatar_url}}' width="40px" height="auto">
+		<span>{{repo.name}}</span><a  href="{{baseHref}}repos/{{repo.owner.login}}/{{repo.name}}" class="btn btn-sm btn-default pull-right">View Commit</a></li>
+	</div>
+	<div ng-show="errorMsg">
+	No Results Found
+	</div>
+</div>
